@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/plugins/deep_layers" >
+        <file>icon.png</file>
+        <file>deepLayers.png</file>
+        <file>mapinfo.png</file>
+    </qresource>
+</RCC>
