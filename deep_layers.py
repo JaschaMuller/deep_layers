@@ -110,7 +110,10 @@ except:
     fiowhl = os.path.join(__location__, 
     'resources/Fiona-1.8.13-cp37-cp37m-win_amd64.whl')
     
-    commands ='set GDAL_VERSION='+gdalvnum+'\n\
+    commands ='call "C:\OSGeo4W64\bin\o4w_env.bat"\n\
+               call "C:\OSGeo4W64\bin\qt5_env.bat"\n\
+               call "C:\OSGeo4W64\bin\py3_env.bat"\n\
+               set GDAL_VERSION='+gdalvnum+'\n\
                set GDAL_VERSION\n\
                pip install '+raswhl+'\n\
                pip install '+fiowhl+'\n\
@@ -128,7 +131,10 @@ except:
 try:
     import sentinelsat
 except:
-    commands ='pip install sentinelsat\n'
+    commands ='call "C:\OSGeo4W64\bin\o4w_env.bat"\n\
+               call "C:\OSGeo4W64\bin\qt5_env.bat"\n\
+               call "C:\OSGeo4W64\bin\py3_env.bat"\n\
+               pip install sentinelsat\n'
     process = Popen("cmd.exe", shell=False, universal_newlines=True,
                   stdin=PIPE, stdout=PIPE, stderr=PIPE )                             
     
@@ -139,7 +145,10 @@ except:
 try:
     import rasterio
 except:
-    commands ='pip install rasetrio\n'
+    commands ='call "C:\OSGeo4W64\bin\o4w_env.bat"\n\
+               call "C:\OSGeo4W64\bin\qt5_env.bat"\n\
+               call "C:\OSGeo4W64\bin\py3_env.bat"\n\
+               pip install rasetrio\n'
     process = Popen("cmd.exe", shell=False, universal_newlines=True,
                   stdin=PIPE, stdout=PIPE, stderr=PIPE )                             
     
@@ -150,7 +159,10 @@ except:
 try:
     import geopandas
 except:
-    commands ='pip install geopandas\n'
+    commands ='call "C:\OSGeo4W64\bin\o4w_env.bat"\n\
+               call "C:\OSGeo4W64\bin\qt5_env.bat"\n\
+               call "C:\OSGeo4W64\bin\py3_env.bat"\n\
+               pip install geopandas\n'
     process = Popen("cmd.exe", shell=False, universal_newlines=True,
                   stdin=PIPE, stdout=PIPE, stderr=PIPE )                             
     
