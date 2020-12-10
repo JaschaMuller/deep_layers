@@ -109,10 +109,10 @@ except:
     'resources/rasterio-1.0.28-cp37-cp37m-win_amd64.whl')
     fiowhl = os.path.join(__location__, 
     'resources/Fiona-1.8.13-cp37-cp37m-win_amd64.whl')
-    
-    commands ='call "C:\OSGeo4W64\bin\o4w_env.bat"\n\
-               call "C:\OSGeo4W64\bin\qt5_env.bat"\n\
-               call "C:\OSGeo4W64\bin\py3_env.bat"\n\
+    pythonPath = sys.executable
+    commands ='set PYTHONHOME='+pythonPath+'\n\
+               set PYTHONPATH='+pythonPath+';'+pythonPath+'\Scripts\n\
+               path %PYTHONHOME%;%PATH%\n\
                set GDAL_VERSION='+gdalvnum+'\n\
                set GDAL_VERSION\n\
                pip install '+raswhl+'\n\
@@ -131,9 +131,9 @@ except:
 try:
     import sentinelsat
 except:
-    commands ='call "C:\OSGeo4W64\bin\o4w_env.bat"\n\
-               call "C:\OSGeo4W64\bin\qt5_env.bat"\n\
-               call "C:\OSGeo4W64\bin\py3_env.bat"\n\
+    commands ='set PYTHONHOME='+pythonPath+'\n\
+               set PYTHONPATH='+pythonPath+';'+pythonPath+'\Scripts\n\
+               path %PYTHONHOME%;%PATH%\n\
                pip install sentinelsat\n'
     process = Popen("cmd.exe", shell=False, universal_newlines=True,
                   stdin=PIPE, stdout=PIPE, stderr=PIPE )                             
@@ -145,9 +145,9 @@ except:
 try:
     import rasterio
 except:
-    commands ='call "C:\OSGeo4W64\bin\o4w_env.bat"\n\
-               call "C:\OSGeo4W64\bin\qt5_env.bat"\n\
-               call "C:\OSGeo4W64\bin\py3_env.bat"\n\
+    commands ='set PYTHONHOME='+pythonPath+'\n\
+               set PYTHONPATH='+pythonPath+';'+pythonPath+'\Scripts\n\
+               path %PYTHONHOME%;%PATH%\n\
                pip install rasetrio\n'
     process = Popen("cmd.exe", shell=False, universal_newlines=True,
                   stdin=PIPE, stdout=PIPE, stderr=PIPE )                             
@@ -159,9 +159,9 @@ except:
 try:
     import geopandas
 except:
-    commands ='call "C:\OSGeo4W64\bin\o4w_env.bat"\n\
-               call "C:\OSGeo4W64\bin\qt5_env.bat"\n\
-               call "C:\OSGeo4W64\bin\py3_env.bat"\n\
+    commands ='set PYTHONHOME='+pythonPath+'\n\
+               set PYTHONPATH='+pythonPath+';'+pythonPath+'\Scripts\n\
+               path %PYTHONHOME%;%PATH%\n\
                pip install geopandas\n'
     process = Popen("cmd.exe", shell=False, universal_newlines=True,
                   stdin=PIPE, stdout=PIPE, stderr=PIPE )                             
