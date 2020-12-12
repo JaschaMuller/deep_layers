@@ -109,10 +109,8 @@ except:
     'resources/rasterio-1.0.28-cp37-cp37m-win_amd64.whl')
     fiowhl = os.path.join(__location__, 
     'resources/Fiona-1.8.13-cp37-cp37m-win_amd64.whl')
-    pythonPath = sys.executable
-    commands ='set PYTHONHOME='+pythonPath+'\n\
-               set PYTHONPATH='+pythonPath+';'+pythonPath+'\Scripts\n\
-               path %PYTHONHOME%;%PATH%\n\
+    pythonPath = str(pathlib.Path(sys.executable).parent/'py3_env.bat')
+    commands ='call '+pythonPath + '\n\
                set GDAL_VERSION='+gdalvnum+'\n\
                set GDAL_VERSION\n\
                pip install '+raswhl+'\n\
@@ -131,9 +129,7 @@ except:
 try:
     import sentinelsat
 except:
-    commands ='set PYTHONHOME='+pythonPath+'\n\
-               set PYTHONPATH='+pythonPath+';'+pythonPath+'\Scripts\n\
-               path %PYTHONHOME%;%PATH%\n\
+    commands ='call '+pythonPath + '\n\
                pip install sentinelsat\n'
     process = Popen("cmd.exe", shell=False, universal_newlines=True,
                   stdin=PIPE, stdout=PIPE, stderr=PIPE )                             
@@ -145,9 +141,7 @@ except:
 try:
     import rasterio
 except:
-    commands ='set PYTHONHOME='+pythonPath+'\n\
-               set PYTHONPATH='+pythonPath+';'+pythonPath+'\Scripts\n\
-               path %PYTHONHOME%;%PATH%\n\
+    commands ='call '+pythonPath + '\n\
                pip install rasetrio\n'
     process = Popen("cmd.exe", shell=False, universal_newlines=True,
                   stdin=PIPE, stdout=PIPE, stderr=PIPE )                             
@@ -159,9 +153,7 @@ except:
 try:
     import geopandas
 except:
-    commands ='set PYTHONHOME='+pythonPath+'\n\
-               set PYTHONPATH='+pythonPath+';'+pythonPath+'\Scripts\n\
-               path %PYTHONHOME%;%PATH%\n\
+    commands ='call '+pythonPath + '\n\
                pip install geopandas\n'
     process = Popen("cmd.exe", shell=False, universal_newlines=True,
                   stdin=PIPE, stdout=PIPE, stderr=PIPE )                             
