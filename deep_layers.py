@@ -123,8 +123,8 @@ except:
     
     # print out and err for debugging
     out, err = process.communicate(commands)
-    #print('OUT->', out)
-    #print('ERR->', err)
+    print('OUT->', out)
+    print('ERR->', err)
     from eolearn.core import FeatureType, EOPatch, LoadTask, OverwritePermission
     from eolearn.io import ExportToTiff
     from sentinelhub import BBoxSplitter, CRS, BBox
