@@ -94,6 +94,7 @@ import shapely
 from subprocess import Popen, PIPE, check_output, STDOUT, CREATE_NO_WINDOW
 import time
 
+'''
 try:
     from eolearn.core import FeatureType, EOPatch, LoadTask, OverwritePermission
     from eolearn.io import ExportToTiff
@@ -151,6 +152,7 @@ except:
     out, err = process.communicate(commands)
     # Also geopandas is important
     import rasterio 
+'''
 try:
     import geopandas
 except:
