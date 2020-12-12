@@ -156,6 +156,7 @@ except:
 try:
     import geopandas
 except:
+    pythonPath = '''"'''+str(pathlib.Path(sys.executable).parent/'py3_env.bat')+'''"'''
     commands ='call '+pythonPath + '\n\
                pip install geopandas\n'
     process = Popen("cmd.exe", shell=False, universal_newlines=True,
