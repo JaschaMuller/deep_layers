@@ -106,7 +106,8 @@ except:
     __location__ = os.path.realpath(os.path.join(os.getcwd(), 
                                     os.path.dirname(__file__)))
     raswhl = os.path.join(__location__, 
-    'resources/rasterio-1.0.28-cp37-cp37m-win_amd64.whl')
+    'resources/rasterio‑1.1.8‑cp37‑cp37m‑win_amd64.whl')
+    #'resources/rasterio-1.0.28-cp37-cp37m-win_amd64.whl')
     fiowhl = os.path.join(__location__, 
     'resources/Fiona-1.8.13-cp37-cp37m-win_amd64.whl')
     pythonPath = '''"'''+str(pathlib.Path(sys.executable).parent/'py3_env.bat')+'''"'''
