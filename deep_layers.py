@@ -109,7 +109,7 @@ except:
     'resources/rasterio-1.0.28-cp37-cp37m-win_amd64.whl')
     fiowhl = os.path.join(__location__, 
     'resources/Fiona-1.8.13-cp37-cp37m-win_amd64.whl')
-    pythonPath = str(pathlib.Path(sys.executable).parent/'py3_env.bat')
+    pythonPath = '''"'''+str(pathlib.Path(sys.executable).parent/'py3_env.bat')+'''"'''
     commands ='call '+pythonPath + '\n\
                set GDAL_VERSION='+gdalvnum+'\n\
                set GDAL_VERSION\n\
